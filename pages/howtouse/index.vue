@@ -21,7 +21,9 @@
     </div>
 
     <div class="max-w-3xl mx-auto px-4 pb-16 text-center">
-      <h2 class="text-xl font-semibold text-[#14a468] mb-4">ทดลองสแกนด้วยกล้อง</h2>
+      <h2 class="text-xl font-semibold text-[#14a468] mb-4">
+        ทดลองสแกนด้วยกล้อง
+      </h2>
       <button
         class="bg-[#14a468] hover:bg-[#108c5d] text-white px-6 py-2 rounded shadow mb-4"
         @click="init"
@@ -35,52 +37,51 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount } from 'vue'
-import * as tmImage from '@teachablemachine/image'
+import { onBeforeUnmount } from "vue";
+import * as tmImage from "@teachablemachine/image";
 
-const URL = "https://teachablemachine.withgoogle.com/models/EB2h8Fb06/"
-let model, webcam, labelContainer, maxPredictions
+const URL = "https://teachablemachine.withgoogle.com/models/EB2h8Fb06/";
+let model, webcam, labelContainer, maxPredictions;
 
 async function init() {
-  const modelURL = URL + "model.json"
-  const metadataURL = URL + "metadata.json"
+  const modelURL = URL + "model.json";
+  const metadataURL = URL + "metadata.json";
 
-  model = await tmImage.load(modelURL, metadataURL)
-  maxPredictions = model.getTotalClasses()
+  model = await tmImage.load(modelURL, metadataURL);
+  maxPredictions = model.getTotalClasses();
 
-  const flip = true
-  webcam = new tmImage.Webcam(200, 200, flip)
-  await webcam.setup()
-  await webcam.play()
-  window.requestAnimationFrame(loop)
+  const flip = true;
+  webcam = new tmImage.Webcam(200, 200, flip);
+  await webcam.setup();
+  await webcam.play();
+  window.requestAnimationFrame(loop);
 
-  document.getElementById("webcam-container").innerHTML = ""
-  document.getElementById("webcam-container").appendChild(webcam.canvas)
+  document.getElementById("webcam-container").innerHTML = "";
+  document.getElementById("webcam-container").appendChild(webcam.canvas);
 
-  labelContainer = document.getElementById("label-container")
-  labelContainer.innerHTML = ""
+  labelContainer = document.getElementById("label-container");
+  labelContainer.innerHTML = "";
   for (let i = 0; i < maxPredictions; i++) {
-    labelContainer.appendChild(document.createElement("div"))
+    labelContainer.appendChild(document.createElement("div"));
   }
 }
 
 async function loop() {
-  webcam.update()
-  await predict()
-  window.requestAnimationFrame(loop)
+  webcam.update();
+  await predict();
+  window.requestAnimationFrame(loop);
 }
 
 async function predict() {
-  const prediction = await model.predict(webcam.canvas)
+  const prediction = await model.predict(webcam.canvas);
   for (let i = 0; i < maxPredictions; i++) {
     const classPrediction =
-      prediction[i].className + ": " + prediction[i].probability.toFixed(2)
-    labelContainer.childNodes[i].innerHTML = classPrediction
+      prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+    labelContainer.childNodes[i].innerHTML = classPrediction;
   }
 }
 
-// Cleanup webcam when component is unmounted
 onBeforeUnmount(() => {
-  if (webcam) webcam.stop()
-})
+  if (webcam) webcam.stop();
+});
 </script>
