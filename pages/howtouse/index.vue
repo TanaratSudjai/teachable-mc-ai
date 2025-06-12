@@ -64,6 +64,24 @@
         </div>
       </div>
       
+      <!-- ส่วนแสดงเมื่อไม่พบอาหาร -->
+      <div v-else-if="scanActive" class="bg-white rounded-lg shadow-lg p-6 mb-6 max-w-md mx-auto">
+        <div class="flex items-center mb-4">
+          <div class="bg-gray-100 p-2 rounded-full mr-4">
+            <span class="text-2xl">❓</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">ไม่สามารถระบุอาหารได้</h4>
+            <p class="text-gray-600">กรุณาลองภาพอื่น หรือปรับตำแหน่งอาหาร</p>
+          </div>
+        </div>
+        
+        <div class="bg-yellow-50 p-3 rounded-md text-sm border border-yellow-100">
+          <p>ระบบสามารถตรวจจับอาหารได้เฉพาะที่ได้รับการฝึกสอนเท่านั้น</p>
+          <p class="mt-1 text-xs text-gray-500">ตัวอย่างอาหารที่รองรับ: ข้าวไข่เจียว, ข้าวขาหมู, ต้มยำกุ้ง, ฯลฯ</p>
+        </div>
+      </div>
+      
       <!-- ส่วนแสดงผลการทำนายทั้งหมด -->
       <div id="label-container" class="space-y-1 text-gray-700 text-sm"></div>
     </div>
@@ -77,6 +95,10 @@ import * as tmImage from "@teachablemachine/image";
 const URL = "https://teachablemachine.withgoogle.com/models/EB2h8Fb06/";
 let model, webcam, labelContainer, maxPredictions;
 const currentFood = ref(null);
+const scanActive = ref(false);
+
+// ค่าความมั่นใจขั้นต่ำที่ยอมรับได้ (0.7 = 70%)
+const CONFIDENCE_THRESHOLD = 0.7;
 
 // ฐานข้อมูลอาหารและแคลอรี่
 const foodDatabase = {
@@ -88,9 +110,9 @@ const foodDatabase = {
   "น่องไก่ทอด": { calories: 320, protein: 22, carbs: 12, fat: 18, emoji: "🍗" },
   "ผัดซีอิ๊ว": { calories: 520, protein: 15, carbs: 75, fat: 16, emoji: "🍜" },
   "แพนเค้ก": { calories: 380, protein: 8, carbs: 55, fat: 14, emoji: "🥞" },
-  "เฟรนช์ฟรายส์": { calories: 310, protein: 4, carbs: 40, fat: 15, emoji: "🍟" },
+    "เฟรนช์ฟรายส์": { calories: 310, protein: 4, carbs: 40, fat: 15, emoji: "🍟" },
   "แอปเปิ้ล": { calories: 95, protein: 0.5, carbs: 25, fat: 0.3, emoji: "🍎" }
-}
+};
 
 // ฟังก์ชันสำหรับดึงข้อมูลอาหาร
 function getFoodCalories(foodName) {
@@ -136,6 +158,9 @@ async function init() {
   for (let i = 0; i < maxPredictions; i++) {
     labelContainer.appendChild(document.createElement("div"));
   }
+  
+  // เริ่มสแกน
+  scanActive.value = true;
 }
 
 async function loop() {
@@ -155,8 +180,8 @@ async function predict() {
       prediction[i].className + ": " + prediction[i].probability.toFixed(2);
     labelContainer.childNodes[i].innerHTML = classPrediction;
     
-    // ถ้าความแม่นยำมากกว่า 50% และมากกว่าค่าสูงสุดที่พบ
-    if (prediction[i].probability > 0.5 && prediction[i].probability > highestPrediction.confidence) {
+    // เก็บค่าความมั่นใจสูงสุด
+    if (prediction[i].probability > highestPrediction.confidence) {
       highestPrediction = {
         name: prediction[i].className,
         confidence: prediction[i].probability
@@ -164,10 +189,11 @@ async function predict() {
     }
   }
   
-  // อัพเดทอาหารที่กำลังแสดง
-  if (highestPrediction.confidence > 0) {
+  // ตรวจสอบว่าค่าความมั่นใจสูงกว่าเกณฑ์หรือไม่
+  if (highestPrediction.confidence >= CONFIDENCE_THRESHOLD) {
     currentFood.value = highestPrediction;
   } else {
+    // ถ้าความมั่นใจต่ำกว่าเกณฑ์ ให้แสดงว่าไม่สามารถระบุได้
     currentFood.value = null;
   }
 }
@@ -177,6 +203,7 @@ onBeforeUnmount(() => {
   if (webcam) {
     webcam.stop();
   }
+  scanActive.value = false;
 });
 </script>
 
@@ -192,7 +219,7 @@ onBeforeUnmount(() => {
   to { opacity: 1; transform: translateY(0); }
 }
 
-div[v-if="currentFood"] {
+div[v-if="currentFood"], div[v-else-if="scanActive"] {
   animation: fadeIn 0.3s ease-out;
 }
 </style>
