@@ -97,8 +97,8 @@ let model, webcam, labelContainer, maxPredictions;
 const currentFood = ref(null);
 const scanActive = ref(false);
 
-// ค่าความมั่นใจขั้นต่ำที่ยอมรับได้ (0.7 = 70%)
-const CONFIDENCE_THRESHOLD = 0.7;
+// ค่าความมั่นใจขั้นต่ำที่ยอมรับได้ (0.9 = 90%)
+const CONFIDENCE_THRESHOLD = 0.8;
 
 // ฐานข้อมูลอาหารและแคลอรี่
 const foodDatabase = {
