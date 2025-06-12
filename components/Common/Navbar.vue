@@ -14,8 +14,8 @@
         />
         <span
           class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-          >Foods app scaning</span
-        >
+          >AI Scan Food
+        </span>
       </a>
       <button
         data-collapse-toggle="navbar-default"
@@ -47,7 +47,7 @@
         >
           <li>
             <a
-              href="#"
+              href="/"
               class="block py-2 px-3 text-white rounded-sm md:bg-transparent md:p-0 dark:text-white"
               aria-current="page"
               >ข่าวสาร</a
@@ -55,30 +55,23 @@
           </li>
           <li>
             <a
-              href="#"
+              href="/about"
               class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >เกี่ยวกับเรา</a
             >
           </li>
           <li>
             <a
-              href="#"
+              href="/service"
               class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >บริการ</a
             >
           </li>
           <li>
             <a
-              href="#"
+              href="/howtouse"
               class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >ใช้บริการ</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >ติดต่อ</a
             >
           </li>
         </ul>
