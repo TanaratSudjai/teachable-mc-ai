@@ -1,4 +1,5 @@
 <template>
+
   <nav class="border-gray-200 bg-[#14a468]">
     <div
       class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between md:p-4 p-2"
@@ -26,11 +27,18 @@
         <span class="sr-only">Open main menu</span>
         <svg v-if="!isOpen" class="w-5 h-5" fill="none" viewBox="0 0 17 14">
           <path
-            stroke="currentColor"
+            v-if="!menuOpen"
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M1 1h15M1 7h15M1 13h15"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+          <path
+            v-else
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
           />
         </svg>
         <svg v-else class="w-5 h-5" fill="none" viewBox="0 0 24 24">
@@ -43,6 +51,7 @@
           />
         </svg>
       </button>
+
 
       <!-- Navbar links -->
       <div :class="[isOpen ? 'block' : 'hidden', 'w-full md:block md:w-auto']">
@@ -77,6 +86,11 @@
               class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 md:text-white"
               >ใช้บริการ</a
             >
+              <span class="flex items-center">
+                <span v-html="item.icon" class="mr-2"></span>
+                {{ item.text }}
+              </span>
+            </a>
           </li>
         </ul>
       </div>
@@ -85,6 +99,7 @@
 </template>
 
 <script setup>
+
 import { ref } from "vue";
 
 const isOpen = ref(false);
