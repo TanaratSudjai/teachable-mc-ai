@@ -151,7 +151,7 @@
   </div>
 
   <!-- แสดงรูปภาพที่อัปโหลด -->
-  <div v-if="uploadedImage" class="mb-4 flex justify-center mb-2 w-full">
+  <div v-if="uploadedImage" class="mb-4 flex justify-center w-full">
     <div class="relative inline-block">
 
       <img :src="uploadedImage" class="max-h-[400px] rounded-lg shadow-md" ref="uploadedImageElement" />
