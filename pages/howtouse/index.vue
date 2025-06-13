@@ -1,12 +1,20 @@
 <template>
   <div class="bg-gradient-to-b from-white to-gray-50">
     <!-- Hero Section with Animated Background -->
-    <div class="relative overflow-hidden bg-gradient-to-r from-[#14a468] to-[#0f8c57] text-white">
+    <div
+      class="relative overflow-hidden bg-gradient-to-r from-[#14a468] to-[#0f8c57] text-white"
+    >
       <!-- Animated Circles Background -->
       <div class="absolute inset-0 overflow-hidden opacity-20">
-        <div class="absolute -top-40 -left-40 w-80 h-80 bg-white rounded-full opacity-20 animate-float-slow"></div>
-        <div class="absolute top-20 right-10 w-60 h-60 bg-white rounded-full opacity-10 animate-float-medium"></div>
-        <div class="absolute bottom-10 left-20 w-40 h-40 bg-white rounded-full opacity-15 animate-float-fast"></div>
+        <div
+          class="absolute -top-40 -left-40 w-80 h-80 bg-white rounded-full opacity-20 animate-float-slow"
+        ></div>
+        <div
+          class="absolute top-20 right-10 w-60 h-60 bg-white rounded-full opacity-10 animate-float-medium"
+        ></div>
+        <div
+          class="absolute bottom-10 left-20 w-40 h-40 bg-white rounded-full opacity-15 animate-float-fast"
+        ></div>
       </div>
 
       <!-- Hero Content -->
@@ -22,10 +30,16 @@
 
         <!-- Hero Image with Shadow Effect -->
         <div
-          class="relative mx-auto max-w-2xl rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
-          <img src="https://spikeapi.com/wp-content/uploads/2024/07/nutrition_hero-1024x625.jpg" class="w-full h-auto"
-            alt="AI Food Scanning" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+          class="relative mx-auto max-w-2xl rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500"
+        >
+          <img
+            src="https://spikeapi.com/wp-content/uploads/2024/07/nutrition_hero-1024x625.jpg"
+            class="w-full h-auto"
+            alt="AI Food Scanning"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"
+          ></div>
         </div>
       </div>
     </div>
@@ -37,16 +51,19 @@
       <span class="relative inline-block">
         ขั้นตอนการใช้งาน
         <span
-          class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#14a468] to-[#0f8c57] rounded-full"></span>
+          class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#14a468] to-[#0f8c57] rounded-full"
+        ></span>
       </span>
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
       <!-- Step 1 -->
       <div
-        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
+      >
         <div
-          class="flex items-center justify-center w-12 h-12 rounded-full bg-[#14a468] text-white font-bold mb-4 mx-auto">
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-[#14a468] text-white font-bold mb-4 mx-auto"
+        >
           1
         </div>
         <h3 class="text-lg font-semibold text-center mb-3">ลงชื่อเข้าใช้</h3>
@@ -57,9 +74,11 @@
 
       <!-- Step 2 -->
       <div
-        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
+      >
         <div
-          class="flex items-center justify-center w-12 h-12 rounded-full bg-[#14a468] text-white font-bold mb-4 mx-auto">
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-[#14a468] text-white font-bold mb-4 mx-auto"
+        >
           2
         </div>
         <h3 class="text-lg font-semibold text-center mb-3">สแกนภาพอาหาร</h3>
@@ -70,9 +89,11 @@
 
       <!-- Step 3 -->
       <div
-        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+        class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
+      >
         <div
-          class="flex items-center justify-center w-12 h-12 rounded-full bg-[#14a468] text-white font-bold mb-4 mx-auto">
+          class="flex items-center justify-center w-12 h-12 rounded-full bg-[#14a468] text-white font-bold mb-4 mx-auto"
+        >
           3
         </div>
         <h3 class="text-lg font-semibold text-center mb-3">รับผลวิเคราะห์</h3>
@@ -83,302 +104,270 @@
     </div>
   </div>
 
-  <div class="max-w-4xl mx-auto px-6 pb-16"></div>
-  <!-- Scanning Section Header -->
-  <div class="text-center mb-4">
-    <h2 class="text-2xl md:text-3xl font-bold text-[#14a468] mb-3">
-      <span class="relative inline-block">
-        🔍 ทดลองสแกนอาหารด้วย AI
-        <span
-          class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#14a468] to-[#0f8c57] rounded-full"></span>
-      </span>
-    </h2>
-    <p class="text-gray-600 max-w-2xl mx-auto">
-      ใช้กล้องเว็บแคมหรืออัปโหลดภาพอาหารเพื่อให้ AI
-      วิเคราะห์แคลอรี่และคุณค่าทางโภชนาการ
-    </p>
-  </div>
-
-  <!-- Scanning Options Card -->
-  <div class="bg-white rounded-xl shadow-lg p-6 mb-6 max-w-2xl mx-auto"></div>
-  <h3 class="text-lg font-semibold text-[#14a468] mb-6 text-center">
-    เลือกวิธีการสแกน
-  </h3>
-
-  <!-- ตัวเลือกการสแกน -->
-  <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6 items-center">
-    <button
-      class="bg-gradient-to-r from-[#14a468] to-[#0f8c57] hover:from-[#108c5d] hover:to-[#0d7a4b] text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
-      @click="init" v-if="!scanActive">
-      <span class="text-xl">📷</span> เริ่มต้นสแกนด้วยกล้อง
-    </button>
-    <button
-      class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
-      @click="stopWebcam" v-else>
-      <span class="text-xl">⏹️</span> หยุดสแกน
-    </button>
-
-    <!-- ปุ่มอัปโหลดรูปภาพ -->
-    <label
-      class="cursor-pointer bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium">
-      <span class="text-xl">📤</span> อัปโหลดรูปภาพ
-      <input type="file" class="hidden" accept="image/*" @change="handleImageUpload" />
-    </label>
-  </div>
-
-  <!-- แสดงสถานะการโหลด -->
-  <div v-if="isLoading" class="mb-8 text-center">
-    <div class="relative inline-flex">
-      <div
-        class="absolute inset-0 rounded-full bg-gradient-to-r from-[#14a468] to-[#0f8c57] opacity-30 blur-md animate-pulse">
-      </div>
-      <div class="relative inline-block animate-spin rounded-full h-16 w-16 border-t-3 border-b-3 border-[#14a468]">
-      </div>
-    </div>
-    <p class="text-gray-600 mt-4 font-medium animate-pulse">
-      กำลังเตรียมระบบ AI...
-    </p>
-  </div>
-
-  <!-- แสดงกล้องเว็บแคม -->
-  <div v-if="scanActive" class="mb-6">
-    <div id="webcam-container" class="flex justify-center mb-2 relative">
-      <!-- เพิ่มกรอบตกแต่งรอบกล้อง -->
-      <div class="absolute -inset-2 bg-gradient-to-r from-[#14a468] to-blue-500 rounded-lg opacity-70 blur-sm"></div>
-      <div class="relative z-10"></div>
-    </div>
-    <p class="text-sm text-gray-500 italic">กำลังสแกนอาหารด้วย AI...</p>
-  </div>
-
-  <!-- แสดงรูปภาพที่อัปโหลด -->
-  <div v-if="uploadedImage" class="mb-4 flex justify-center w-full">
-    <div class="relative inline-block">
-
-      <img :src="uploadedImage" class="max-h-[400px] rounded-lg shadow-md" ref="uploadedImageElement" />
-
-      <button @click="clearImage"
-        class="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center"
-        title="ลบรูปภาพ">
-        ✕
-      </button>
-    </div>
-  </div>
-
-  <!-- ส่วนแสดงผลการวิเคราะห์ -->
-  <div v-if="currentFood" class="bg-white rounded-lg shadow-lg p-6 mb-6 max-w-md mx-auto">
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="text-xl font-bold text-[#14a468]">ผลการวิเคราะห์</h3>
-      <div class="bg-[#14a468] text-white text-xs px-2 py-1 rounded-full">
-        {{ (currentFood.confidence * 100).toFixed(0) }}% แม่นยำ
-      </div>
-    </div>
-
-    <div class="flex items-center mb-4">
-      <div class="bg-gray-100 p-2 rounded-full mr-4">
-        <span class="text-2xl">{{ getFoodEmoji(currentFood.name) }}</span>
-      </div>
-      <div>
-        <h4 class="font-bold text-lg">{{ currentFood.name }}</h4>
-        <p class="text-[#14a468] font-semibold">
-          {{ getFoodCalories(currentFood.name) }} แคลอรี่
-        </p>
-      </div>
-    </div>
-
-    <div class="bg-gray-50 p-3 rounded-md text-sm">
-      <div class="flex justify-between mb-1">
-        <span>โปรตีน</span>
-        <span class="font-semibold">{{ getFoodProtein(currentFood.name) }}g</span>
-      </div>
-      <div class="flex justify-between mb-1">
-        <span>คาร์โบไฮเดรต</span>
-        <span class="font-semibold">{{ getFoodCarbs(currentFood.name) }}g</span>
-      </div>
-      <div class="flex justify-between">
-        <span>ไขมัน</span>
-        <span class="font-semibold">{{ getFoodFat(currentFood.name) }}g</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ส่วนแสดงเมื่อไม่พบอาหาร -->
-  <div v-else-if="scanActive || uploadedImage" class="bg-white rounded-lg shadow-lg p-6 mb-6 max-w-md mx-auto">
-    <div class="flex items-center mb-4">
-      <div class="bg-gray-100 p-2 rounded-full mr-4">
-        <span class="text-2xl">❓</span>
-      </div>
-      <div>
-        <h4 class="font-bold text-lg">ไม่สามารถระบุอาหารได้</h4>
-        <p class="text-gray-600">กรุณาลองภาพอื่น หรือปรับตำแหน่งอาหาร</p>
-      </div>
-    </div>
-
-    <div class="bg-yellow-50 p-3 rounded-md text-sm border border-yellow-100">
-      <p>ระบบสามารถตรวจจับอาหารได้เฉพาะที่ได้รับการฝึกสอนเท่านั้น</p>
-      <p class="mt-1 text-xs text-gray-500">
-        ตัวอย่างอาหารที่รองรับ: ข้าวไข่เจียว, ข้าวขาหมู, ต้มยำกุ้ง, ฯลฯ
+  <div class="max-w-4xl mx-auto px-6 pb-16">
+    <!-- Scanning Section Header -->
+    <div class="text-center mb-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-[#14a468] mb-3">
+        <span class="relative inline-block">
+          🔍 ทดลองสแกนอาหารด้วย AI
+          <span
+            class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-[#14a468] to-[#0f8c57] rounded-full"
+          ></span>
+        </span>
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        ใช้กล้องเว็บแคมหรืออัปโหลดภาพอาหารเพื่อให้ AI
+        วิเคราะห์แคลอรี่และคุณค่าทางโภชนาการ
       </p>
     </div>
   </div>
 
-  <!-- ส่วนแสดงรายการอาหารที่รองรับ -->
-  <div class="mt-10 bg-gray-50 p-4 rounded-lg max-w-md mx-auto">
-    <h3 class="font-semibold text-[#14a468] mb-2">อาหารที่รองรับการตรวจจับ</h3>
-    <div class="grid grid-cols-2 gap-2 text-sm">
-      <div v-for="(food, name) in foodDatabase" :key="name" class="flex items-center">
-        <span class="mr-1">{{ food.emoji }}</span>
-        <span>{{ name }}</span>
+  <!-- Scanning Options Card -->
+  <div class="bg-white rounded-xl shadow-lg p-6 mb-6 max-w-md mx-auto">
+    <h3 class="text-lg font-semibold text-[#14a468] mb-6 text-center">
+      เลือกวิธีการสแกน 
+    </h3>
+
+    <!-- ตัวเลือกการสแกน -->
+    <div class="flex flex-col gap-4 mb-6 items-center">
+      <!-- ปุ่มสแกนด้วยกล้อง -->
+      <button
+        class="w-full bg-[#14a468] hover:bg-[#108c5d] text-white py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
+        @click="init"
+        v-if="!scanActive"
+      >
+        <span class="text-xl">📷</span> เริ่มต้นสแกนด้วยกล้อง
+      </button>
+      <button
+        class="w-full bg-red-500 hover:bg-red-600 text-white py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
+        @click="stopWebcam"
+        v-else
+      >
+        <span class="text-xl">⏹️</span> หยุดสแกน
+      </button>
+
+      <!-- ปุ่มอัปโหลดรูปภาพ -->
+      <label
+        class="w-full cursor-pointer bg-blue-500 hover:bg-blue-600 text-white py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
+      >
+        <span class="text-xl">🍱</span> อัปโหลดรูปภาพ
+        <input
+          type="file"
+          class="hidden"
+          accept="image/*"
+          @change="handleImageUpload"
+        />
+      </label>
+    </div>
+
+    <!-- แสดงสถานะการโหลด -->
+    <div v-if="isLoading" class="mb-8 text-center">
+      <div class="relative inline-flex">
+        <div
+          class="absolute inset-0 rounded-full bg-gradient-to-r from-[#14a468] to-[#0f8c57] opacity-30 blur-md animate-pulse"
+        ></div>
+        <div
+          class="relative inline-block animate-spin rounded-full h-16 w-16 border-t-3 border-b-3 border-[#14a468]"
+        ></div>
+      </div>
+      <p class="text-gray-600 mt-4 font-medium animate-pulse">
+        กำลังเตรียมระบบ AI...
+      </p>
+    </div>
+
+    <!-- แสดงกล้องเว็บแคม -->
+    <div v-if="scanActive" class="mb-6 max-w-md mx-auto">
+      <div class="flex justify-center mb-2 relative">
+        <!-- เพิ่มกรอบตกแต่งรอบกล้อง -->
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-[#14a468] to-[#14a468] rounded-lg opacity-70 blur-sm"
+        ></div>
+        <div id="webcam-container" class="relative z-10 w-full max-w-md rounded-lg overflow-hidden"></div>
+        
+        <!-- ปุ่มสลับกล้อง -->
+        <button 
+          @click="switchCamera"
+          class="absolute bottom-3 right-3 z-20 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300"
+          title="สลับกล้องหน้า/หลัง"
+        >
+          <span class="text-xl">{{ isFrontCamera ? '📱' : '📷' }}</span>
+        </button>
+      </div>
+      <div class="flex justify-between items-center mt-2">
+        <p class="text-sm text-gray-500 italic">
+          กำลังสแกนอาหารด้วย AI...
+        </p>
+        <p class="text-xs text-gray-500">
+          กำลังใช้: {{ isFrontCamera ? 'กล้องหน้า' : 'กล้องหลัง' }}
+        </p>
       </div>
     </div>
-  </div>
 
-  <!-- ส่วนแสดงผลการทำนายทั้งหมด (แสดงเฉพาะเมื่อใช้กล้อง) -->
-  <div v-if="scanActive && !uploadedImage" id="label-container"
-    class="space-y-1 text-gray-700 text-sm mt-4 max-w-md mx-auto bg-gray-50 p-3 rounded-md"></div>
+    <!-- แสดงรูปภาพที่อัปโหลด -->
+    <div v-if="uploadedImage" class="mb-6 max-w-md mx-auto">
+      <div class="relative w-full">
+        <img
+          :src="uploadedImage"
+          class="w-full rounded-lg shadow-md"
+          ref="uploadedImageElement"
+        />
+        <button
+          @click="clearImage"
+          class="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-md"
+          title="ลบรูปภาพ"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
 
-  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-    <!-- Header Section -->
-    <div class="bg-white/80 backdrop-blur-sm border-b border-slate-200/60">
-      <div class="max-w-4xl mx-auto px-6 py-8">
-        <div class="text-center">
-          <h1 class="text-3xl font-bold text-slate-800 mb-2">วิธีใช้บริการ</h1>
-          <p class="text-slate-600 max-w-md mx-auto">
-            สแกนและวิเคราะห์โภชนาการอาหารด้วย AI อัจฉริยะ
-          </p>
+    <!-- ส่วนแสดงผลการวิเคราะห์ -->
+    <div
+      v-if="!currentFood || currentFood.confidence < 0.8"
+      class="bg-white rounded-lg shadow-lg mb-6 max-w-md mx-auto overflow-hidden"
+    >
+      <!-- ส่วนหัวแสดงความแม่นยำ -->
+      <div class="bg-[#14a468] text-white p-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-bold">ไม่สามารถระบุอาหารได้</h3>
         </div>
       </div>
-    </div>
 
-    <!-- Instructions Section -->
-    <div class="max-w-4xl mx-auto px-6 py-12">
-      <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 mb-12">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- ส่วนแสดงข้อมูล -->
+      <div class="p-4">
+        <div class="flex items-center mb-4">
+          <div
+            class="bg-gray-100 p-3 rounded-full mr-4 flex items-center justify-center"
+          >
+            <span class="text-3xl">❓</span>
+          </div>
           <div>
-            <h2 class="text-2xl font-semibold text-slate-800 mb-6">
-              ขั้นตอนการใช้งาน
-            </h2>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-4 group">
-                <div
-                  class="flex-shrink-0 w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-semibold text-sm group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
-                  1
-                </div>
-                <div class="flex-1">
-                  <p class="text-slate-700 font-medium">
-                    กดปุ่ม "สแกนภาพอาหาร"
-                  </p>
-                  <p class="text-slate-500 text-sm mt-1">
-                    เริ่มต้นการสแกนด้วยการกดปุ่มเขียว
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4 group">
-                <div
-                  class="flex-shrink-0 w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-semibold text-sm group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
-                  2
-                </div>
-                <div class="flex-1">
-                  <p class="text-slate-700 font-medium">
-                    อนุญาตให้แอปเข้าถึงกล้อง
-                  </p>
-                  <p class="text-slate-500 text-sm mt-1">
-                    อนุญาตการเข้าถึงกล้องเมื่อเบราว์เซอร์ถาม
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4 group">
-                <div
-                  class="flex-shrink-0 w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-semibold text-sm group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
-                  3
-                </div>
-                <div class="flex-1">
-                  <p class="text-slate-700 font-medium">
-                    ชี้กล้องไปที่จานอาหาร
-                  </p>
-                  <p class="text-slate-500 text-sm mt-1">
-                    จัดมุมกล้องให้เห็นอาหารชัดเจน
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4 group">
-                <div
-                  class="flex-shrink-0 w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-semibold text-sm group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-200">
-                  4
-                </div>
-                <div class="flex-1">
-                  <p class="text-slate-700 font-medium">
-                    รอ AI วิเคราะห์ และดูผลลัพธ์
-                  </p>
-                  <p class="text-slate-500 text-sm mt-1">
-                    ได้ข้อมูลแคลอรี่และโภชนาการในทันที
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex justify-center">
-            <div class="relative">
-              <img src="https://spikeapi.com/wp-content/uploads/2024/07/nutrition_hero-1024x625.jpg"
-                alt="การสแกนอาหารด้วยแอป" class="rounded-2xl shadow-2xl max-w-full h-auto" />
-              <div class="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent rounded-2xl"></div>
-            </div>
+            <p class="text-gray-600">กรุณาลองภาพอื่น หรือปรับตำแหน่งอาหาร</p>
           </div>
         </div>
       </div>
 
-      <!-- Scanner Section -->
-      <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8">
-        <div class="text-center mb-8">
-          <h2 class="text-2xl font-semibold text-slate-800 mb-4">
-            ทดลองสแกนด้วยกล้อง
-          </h2>
-          <p class="text-slate-600 mb-6">
-            กดปุ่มด้านล่างเพื่อเริ่มการสแกนและวิเคราะห์อาหาร
-          </p>
+      <!-- ส่วนแสดงอาหารที่รองรับ -->
+      <div class="bg-yellow-50 p-4 border-t border-yellow-100">
+        <p class="text-sm text-gray-700 mb-2">
+          ระบบสามารถตรวจจับอาหารได้เฉพาะที่ได้รับการฝึกสอนเท่านั้น
+        </p>
+        <p class="text-sm text-gray-700">
+          ตัวอย่างอาหารที่รองรับ:
+          <span class="font-medium"
+            >ข้าวไข่เจียว, ข้าวหมู, ส้มตำ, ผัดกะเพรา, ฯลฯ</span
+          >
+        </p>
+      </div>
+    </div>
 
-          <button @click="init" :disabled="isLoading"
-            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
-            <svg v-if="isLoading" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-              </path>
-            </svg>
-            <span v-if="!isLoading">📱 สแกนภาพอาหาร</span>
-            <span v-else>กำลังโหลด...</span>
-          </button>
+    <!-- ส่วนแสดงผลการวิเคราะห์เมื่อพบอาหาร -->
+    <div
+      v-if="currentFood && currentFood.confidence >= 0.8"
+      class="bg-white rounded-lg shadow-lg mb-6 max-w-md mx-auto overflow-hidden"
+    >
+      <!-- ส่วนหัวแสดงชื่ออาหาร -->
+      <div class="bg-[#14a468] text-white p-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-bold">{{ currentFood.name }}</h3>
+          <div
+            class="bg-white text-[#14a468] text-xs px-2 py-1 rounded-full font-bold"
+          >
+            {{ (currentFood.confidence * 100).toFixed(0) }}%
+          </div>
         </div>
+      </div>
 
-        <!-- Webcam Container -->
-        <div class="flex justify-center mb-6">
-          <div id="webcam-container" class="bg-slate-100 rounded-2xl p-4 min-h-[250px] flex items-center justify-center"
-            :class="{ 'border-2 border-dashed border-slate-300': !isScanning }">
-            <div v-if="!isScanning" class="text-center text-slate-500">
-              <div class="text-4xl mb-2">📸</div>
-              <p>กดปุ่มข้างบนเพื่อเริ่มกล้อง</p>
-            </div>
+      <!-- ส่วนแสดงข้อมูลโภชนาการ -->
+      <div class="p-4">
+        <div class="flex items-center mb-4">
+          <div
+            class="bg-gray-100 p-3 rounded-full mr-4 flex items-center justify-center"
+          >
+            <span class="text-3xl">{{ getFoodEmoji(currentFood.name) }}</span>
+          </div>
+          <div>
+            <p class="text-gray-700 font-medium">
+              ประมาณ
+              <span class="text-[#14a468] font-bold text-xl">{{
+                getFoodCalories(currentFood.name)
+              }}</span>
+              แคลอรี่
+            </p>
           </div>
         </div>
 
-        <!-- Results Container -->
-        <div id="label-container" class="space-y-3" v-show="isScanning">
-          <!-- Results will be populated here -->
-        </div>
-
-        <!-- Stop Button -->
-        <div class="text-center mt-6" v-if="isScanning">
-          <button @click="stopScanning"
-            class="px-6 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-medium rounded-xl transition-colors duration-200">
-            หยุดการสแกน
-          </button>
+        <!-- ข้อมูลโภชนาการโดยละเอียด -->
+        <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <div class="text-xs text-gray-500">โปรตีน</div>
+            <div class="font-bold text-gray-800 mt-1">
+              {{ getFoodProtein(currentFood.name) }}g
+            </div>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <div class="text-xs text-gray-500">คาร์บ</div>
+            <div class="font-bold text-gray-800 mt-1">
+              {{ getFoodCarbs(currentFood.name) }}g
+            </div>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <div class="text-xs text-gray-500">ไขมัน</div>
+            <div class="font-bold text-gray-800 mt-1">
+              {{ getFoodFat(currentFood.name) }}g
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- ส่วนแสดงเมื่อไม่พบอาหาร -->
+    <div v-if="(scanActive || uploadedImage) && (!currentFood || currentFood.confidence < 0.8)"
+      class="bg-white rounded-lg shadow-lg p-6 mb-6 max-w-md mx-auto"
+    >
+        <div class="flex items-center mb-4">
+          <div class="bg-gray-100 p-2 rounded-full mr-4">
+            <span class="text-2xl">❓</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">ไม่สามารถระบุอาหารได้</h4>
+            <p class="text-gray-600">กรุณาลองภาพอื่น หรือปรับตำแหน่งอาหาร</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-yellow-50 p-3 rounded-md text-sm border border-yellow-100"
+        >
+          <p>ระบบสามารถตรวจจับอาหารได้เฉพาะที่ได้รับการฝึกสอนเท่านั้น</p>
+          <p class="mt-1 text-xs text-gray-500">
+            ตัวอย่างอาหารที่รองรับ: ข้าวไข่เจียว, ข้าวขาหมู, ต้มยำกุ้ง, ฯลฯ
+          </p>
+        </div>
+      </div>
+
+    <!-- ส่วนแสดงรายการอาหารที่รองรับ -->
+    <div class="mt-10 bg-gray-50 p-4 rounded-lg max-w-md mx-auto">
+      <h3 class="font-semibold text-[#14a468] mb-2">
+        อาหารที่รองรับการตรวจจับ
+      </h3>
+      <div class="grid grid-cols-2 gap-2 text-sm">
+        <div
+          v-for="(food, name) in foodDatabase"
+          :key="name"
+          class="flex items-center"
+        >
+          <span class="mr-1">{{ food.emoji }}</span>
+          <span>{{ name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ส่วนแสดงผลการทำนายทั้งหมด (แสดงเฉพาะเมื่อใช้กล้อง) -->
+    <div
+      v-if="scanActive && !uploadedImage"
+      id="label-container"
+      class="space-y-1 text-gray-700 text-sm mt-4 max-w-md mx-auto bg-gray-50 p-3 rounded-md"
+    ></div>
   </div>
 </template>
 
@@ -393,6 +382,7 @@ const scanActive = ref(false);
 const isLoading = ref(false);
 const uploadedImage = ref(null);
 const uploadedImageElement = ref(null);
+const isFrontCamera = ref(true); // ตัวแปรเก็บสถานะว่าใช้กล้องหน้าหรือกล้องหลัง
 
 // ค่าความมั่นใจขั้นต่ำที่ยอมรับได้ (0.8 = 80%)
 const CONFIDENCE_THRESHOLD = 0.8;
@@ -477,7 +467,19 @@ async function init() {
   // จัดการกล้อง
   try {
     const flip = true;
-    webcam = new tmImage.Webcam(400, 400, flip);
+    // กำหนดค่า facingMode ตามสถานะของกล้อง
+    const facingMode = isFrontCamera.value ? "user" : "environment";
+    
+    // สร้าง constraints สำหรับกล้อง
+    const constraints = {
+      video: {
+        width: { ideal: 400 },
+        height: { ideal: 400 },
+        facingMode: facingMode
+      }
+    };
+    
+    webcam = new tmImage.Webcam(400, 400, flip, constraints);
     await webcam.setup();
     await webcam.play();
     window.requestAnimationFrame(loop);
@@ -507,6 +509,23 @@ function stopWebcam() {
     }
   }
   scanActive.value = false;
+}
+
+// ฟังก์ชันสลับกล้องหน้า/หลัง
+async function switchCamera() {
+  // สลับสถานะกล้อง
+  isFrontCamera.value = !isFrontCamera.value;
+  
+  // ถ้ากำลังสแกนอยู่ ให้หยุดและเริ่มใหม่ด้วยกล้องที่เปลี่ยน
+  if (scanActive.value) {
+    // หยุดกล้องปัจจุบัน
+    if (webcam) {
+      webcam.stop();
+    }
+    
+    // เริ่มกล้องใหม่
+    await init();
+  }
 }
 
 // ฟังก์ชันสำหรับการอัปโหลดรูปภาพ
@@ -628,24 +647,6 @@ async function predict() {
   }
 }
 
-const stopScanning = () => {
-  isScanning.value = false;
-  if (webcam) {
-    webcam.stop();
-  }
-
-  const container = document.getElementById("webcam-container");
-  container.innerHTML = `
-    <div class="text-center text-slate-500">
-      <div class="text-4xl mb-2">📸</div>
-      <p>กดปุ่มข้างบนเพื่อเริ่มกล้องใหม่</p>
-    </div>
-  `;
-
-  const labelContainer = document.getElementById("label-container");
-  labelContainer.innerHTML = "";
-};
-
 // ทำความสะอาดเมื่อออกจากหน้า
 onBeforeUnmount(() => {
   stopWebcam();
@@ -667,7 +668,6 @@ onBeforeUnmount(() => {
     opacity: 0;
     transform: translateY(10px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
