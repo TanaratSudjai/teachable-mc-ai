@@ -47,7 +47,7 @@
       <!-- Navbar links -->
       <div :class="[isOpen ? 'block' : 'hidden', 'w-full md:block md:w-auto']">
         <ul
-          class="font-medium flex flex-col mt-4 border-2 border-gray-100 shadow-xl rounded-sm bg-white md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
+          class="font-medium flex flex-col mt-4 border-2 border-gray-100 rounded-sm bg-white md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
         >
           <li>
             <a
