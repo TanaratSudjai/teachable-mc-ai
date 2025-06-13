@@ -1,6 +1,8 @@
 <template>
   <nav class="border-gray-200 bg-[#14a468]">
-    <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
+    <div
+      class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between md:p-4 p-2"
+    >
       <!-- Logo + Title -->
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img
@@ -8,7 +10,9 @@
           class="h-8 rounded-full"
           alt="Logo"
         />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">
+        <span
+          class="self-center text-2xl font-semibold whitespace-nowrap text-white"
+        >
           AI Scan Food
         </span>
       </a>
@@ -41,14 +45,9 @@
       </button>
 
       <!-- Navbar links -->
-      <div
-        :class="[
-          isOpen ? 'block' : 'hidden',
-          'w-full md:block md:w-auto'
-        ]"
-      >
+      <div :class="[isOpen ? 'block' : 'hidden', 'w-full md:block md:w-auto']">
         <ul
-          class="font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-white md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
+          class="font-medium flex flex-col mt-4 border-2 border-gray-100 shadow-xl rounded-sm bg-white md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0"
         >
           <li>
             <a
@@ -86,7 +85,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const isOpen = ref(false)
+const isOpen = ref(false);
 </script>

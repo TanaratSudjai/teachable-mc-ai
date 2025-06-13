@@ -6,11 +6,10 @@
       </h1>
 
       <ol class="list-decimal list-inside space-y-3 text-gray-700">
-        <li>ลงชื่อเข้าใช้เว็บไซต์หรือแอป</li>
-        <li>คลิก “สแกนภาพอาหาร” ดึงจากกล้องหรืออัปโหลด</li>
+        <li>กดปุ่ม “สแกนภาพอาหาร”</li>
+        <li>อนุญาตให้แอปเข้าถึงกล้อง</li>
+        <li>ชี้กล้องไปที่จานอาหารที่ต้องการวิเคราะห์</li>
         <li>รอ AI วิเคราะห์ และดูแคลอรี่/โภชนาการในทันที</li>
-        <li>ตรวจสอบและปรับแก้หากต้องการ</li>
-        <li>บันทึกผลลงในระบบเพื่อดูย้อนหลังได้</li>
       </ol>
 
       <img
@@ -28,7 +27,7 @@
         class="bg-[#14a468] hover:bg-[#108c5d] text-white px-6 py-2 rounded shadow mb-4"
         @click="init"
       >
-        ▶️ เริ่มต้นการสแกน
+        ▶️ สแกนภาพอาหาร
       </button>
       <div id="webcam-container" class="flex justify-center mb-4"></div>
       <div id="label-container" class="space-y-1 text-gray-700 text-sm"></div>
