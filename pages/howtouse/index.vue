@@ -130,18 +130,25 @@
 
     <!-- ตัวเลือกการสแกน -->
     <div class="flex flex-col gap-4 mb-6 items-center">
-      <!-- ปุ่มสแกนด้วยกล้อง -->
+      <!-- ปุ่มเริ่มสแกนด้วยกล้อง -->
       <button
-        class="w-full bg-[#14a468] hover:bg-[#108c5d] text-white py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
-        @click="init"
         v-if="!scanActive"
+        @click="init"
+        class="w-full bg-[#14a468] hover:bg-[#0f8050] text-white font-bold py-4 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden"
+        :disabled="isLoading || isInitializingCamera"
       >
-        <span class="text-xl">📷</span> เริ่มต้นสแกนด้วยกล้อง
+        <div v-if="isInitializingCamera" class="absolute inset-0 flex items-center justify-center bg-[#0f8050]">
+          <div class="animate-spin h-6 w-6 border-3 border-t-white border-r-transparent border-b-white border-l-transparent rounded-full"></div>
+        </div>
+        <span class="text-xl">📷</span> 
+        <span>เริ่มต้นสแกนด้วยกล้อง</span>
       </button>
+      
+      <!-- ปุ่มหยุดสแกน -->
       <button
-        class="w-full bg-red-500 hover:bg-red-600 text-white py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
+        v-if="scanActive"
         @click="stopWebcam"
-        v-else
+        class="w-full bg-red-500 hover:bg-red-600 text-white py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 font-medium"
       >
         <span class="text-xl">⏹️</span> หยุดสแกน
       </button>
@@ -177,17 +184,27 @@
 
     <!-- แสดงกล้องเว็บแคม -->
     <div v-if="scanActive" class="mb-6 max-w-md mx-auto">
-      <div class="flex justify-center mb-2 relative">
+      <div class="flex justify-center mb-2 relative h-[400px] border border-gray-200 rounded-lg bg-black">
         <!-- เพิ่มกรอบตกแต่งรอบกล้อง -->
         <div
           class="absolute -inset-1 bg-gradient-to-r from-[#14a468] to-[#14a468] rounded-lg opacity-70 blur-sm"
         ></div>
-        <div id="webcam-container" class="relative z-10 w-full max-w-md rounded-lg overflow-hidden"></div>
+        
+        <!-- ข้อความกำลังโหลดกล้อง -->
+        <div v-if="isInitializingCamera" class="absolute inset-0 flex items-center justify-center z-30 bg-black/50">
+          <div class="text-white text-center">
+            <div class="animate-spin h-10 w-10 border-4 border-t-[#14a468] border-r-transparent border-b-[#14a468] border-l-transparent rounded-full mx-auto mb-2"></div>
+            <p>กำลังเปิดกล้อง...</p>
+          </div>
+        </div>
+        
+        <!-- ช่องแสดงกล้อง -->
+        <div id="webcam-container" class="relative z-10 w-full h-full flex items-center justify-center"></div>
         
         <!-- ปุ่มสลับกล้อง -->
         <button 
           @click="switchCamera"
-          class="absolute bottom-3 right-3 z-20 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300"
+          class="absolute bottom-3 right-3 z-20 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300"
           title="สลับกล้องหน้า/หลัง"
         >
           <span class="text-xl">{{ isFrontCamera ? '📱' : '📷' }}</span>
@@ -226,14 +243,14 @@
       v-if="!currentFood || currentFood.confidence < 0.8"
       class="bg-white rounded-lg shadow-lg mb-6 max-w-md mx-auto overflow-hidden"
     >
-      <!-- ส่วนหัวแสดงความแม่นยำ
+      <!-- ส่วนหัวแสดงความแม่นยำ -->
       <div class="bg-[#14a468] text-white p-4">
         <div class="flex items-center justify-between">
           <h3 class="text-xl font-bold">ไม่สามารถระบุอาหารได้</h3>
         </div>
       </div>
 
-      ส่วนแสดงข้อมูล
+      <!-- ส่วนแสดงข้อมูล -->
       <div class="p-4">
         <div class="flex items-center mb-4">
           <div
@@ -245,10 +262,10 @@
             <p class="text-gray-600">กรุณาลองภาพอื่น หรือปรับตำแหน่งอาหาร</p>
           </div>
         </div>
-      </div>  -->
+      </div>
 
-      
-      <!-- <div class="bg-yellow-50 p-4 border-t border-yellow-100">
+      <!-- ส่วนแสดงอาหารที่รองรับ -->
+      <div class="bg-yellow-50 p-4 border-t border-yellow-100">
         <p class="text-sm text-gray-700 mb-2">
           ระบบสามารถตรวจจับอาหารได้เฉพาะที่ได้รับการฝึกสอนเท่านั้น
         </p>
@@ -258,7 +275,7 @@
             >ข้าวไข่เจียว, ข้าวหมู, ส้มตำ, ผัดกะเพรา, ฯลฯ</span
           >
         </p>
-      </div> -->
+      </div>
     </div>
 
     <!-- ส่วนแสดงผลการวิเคราะห์เมื่อพบอาหาร -->
@@ -383,6 +400,7 @@ const isLoading = ref(false);
 const uploadedImage = ref(null);
 const uploadedImageElement = ref(null);
 const isFrontCamera = ref(true); // ตัวแปรเก็บสถานะว่าใช้กล้องหน้าหรือกล้องหลัง
+const isInitializingCamera = ref(false); // ตัวแปรเก็บสถานะการเปิดกล้อง
 
 // ค่าความมั่นใจขั้นต่ำที่ยอมรับได้ (0.8 = 80%)
 const CONFIDENCE_THRESHOLD = 0.8;
@@ -457,11 +475,19 @@ async function loadModel() {
 // ฟังก์ชันเริ่มต้นการสแกนด้วยกล้อง
 async function init() {
   currentFood.value = null;
+  
+  // แสดงสถานะกำลังเปิดกล้อง
+  scanActive.value = true;
+  isInitializingCamera.value = true;
 
   // โหลดโมเดล (ถ้ายังไม่ได้โหลด)
   if (!model) {
     const success = await loadModel();
-    if (!success) return;
+    if (!success) {
+      scanActive.value = false;
+      isInitializingCamera.value = false;
+      return;
+    }
   }
 
   // จัดการกล้อง
@@ -479,23 +505,33 @@ async function init() {
       }
     };
     
+    // สร้าง webcam และตั้งค่า
     webcam = new tmImage.Webcam(400, 400, flip, constraints);
     await webcam.setup();
     await webcam.play();
-    window.requestAnimationFrame(loop);
-
+    
     // แสดงวิดีโอ
     const webcamContainer = document.getElementById("webcam-container");
     if (webcamContainer) {
       webcamContainer.innerHTML = "";
       webcamContainer.appendChild(webcam.canvas);
+      
+      // ปรับขนาดและสไตล์ของ canvas
+      webcam.canvas.style.width = "100%";
+      webcam.canvas.style.height = "100%";
+      webcam.canvas.style.objectFit = "cover";
     }
+    
+    // เริ่มการทำนาย
+    window.requestAnimationFrame(loop);
 
-    // เริ่มสแกน
-    scanActive.value = true;
+    // เริ่มสแกนเสร็จสิ้น
+    isInitializingCamera.value = false;
   } catch (error) {
     console.error("Error initializing webcam:", error);
     alert("ไม่สามารถเข้าถึงกล้องได้ กรุณาตรวจสอบการอนุญาตการใช้งานกล้อง");
+    scanActive.value = false;
+    isInitializingCamera.value = false;
   }
 }
 
@@ -518,13 +554,22 @@ async function switchCamera() {
   
   // ถ้ากำลังสแกนอยู่ ให้หยุดและเริ่มใหม่ด้วยกล้องที่เปลี่ยน
   if (scanActive.value) {
+    // แสดงสถานะกำลังเปิดกล้อง
+    isInitializingCamera.value = true;
+    
     // หยุดกล้องปัจจุบัน
     if (webcam) {
       webcam.stop();
     }
     
-    // เริ่มกล้องใหม่
-    await init();
+    try {
+      // เริ่มกล้องใหม่
+      await init();
+    } catch (error) {
+      console.error("Error switching camera:", error);
+      alert("ไม่สามารถสลับกล้องได้ กรุณาลองใหม่อีกครั้ง");
+      isInitializingCamera.value = false;
+    }
   }
 }
 
