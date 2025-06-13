@@ -243,40 +243,6 @@
       v-if="!currentFood || currentFood.confidence < 0.8"
       class="bg-white rounded-lg shadow-lg mb-6 max-w-md mx-auto overflow-hidden"
     >
-      <!-- ส่วนหัวแสดงความแม่นยำ -->
-      <div class="bg-[#14a468] text-white p-4">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xl font-bold">ไม่สามารถระบุอาหารได้</h3>
-        </div>
-      </div>
-
-      <!-- ส่วนแสดงข้อมูล -->
-      <div class="p-4">
-        <div class="flex items-center mb-4">
-          <div
-            class="bg-gray-100 p-3 rounded-full mr-4 flex items-center justify-center"
-          >
-            <span class="text-3xl">❓</span>
-          </div>
-          <div>
-            <p class="text-gray-600">กรุณาลองภาพอื่น หรือปรับตำแหน่งอาหาร</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ส่วนแสดงอาหารที่รองรับ -->
-      <div class="bg-yellow-50 p-4 border-t border-yellow-100">
-        <p class="text-sm text-gray-700 mb-2">
-          ระบบสามารถตรวจจับอาหารได้เฉพาะที่ได้รับการฝึกสอนเท่านั้น
-        </p>
-        <p class="text-sm text-gray-700">
-          ตัวอย่างอาหารที่รองรับ:
-          <span class="font-medium"
-            >ข้าวไข่เจียว, ข้าวหมู, ส้มตำ, ผัดกะเพรา, ฯลฯ</span
-          >
-        </p>
-      </div>
-    </div>
 
     <!-- ส่วนแสดงผลการวิเคราะห์เมื่อพบอาหาร -->
     <div
