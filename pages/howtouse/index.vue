@@ -238,12 +238,6 @@
       </div>
     </div>
 
-    <!-- ส่วนแสดงผลการวิเคราะห์ -->
-    <div
-      v-if="!currentFood || currentFood.confidence < 0.8"
-      class="bg-white rounded-lg shadow-lg mb-6 max-w-md mx-auto overflow-hidden"
-    >
-
     <!-- ส่วนแสดงผลการวิเคราะห์เมื่อพบอาหาร -->
     <div
       v-if="currentFood && currentFood.confidence >= 0.8"
